@@ -22,7 +22,7 @@ class FormController
 	 */
 	public function addElement($type, $name)
 	{
-		$class = '\\GCWorld\\FormBuilder\\Elements'.$type;
+		$class = '\\GCWorld\\FormBuilder\\Elements\\'.$type;
 		$obj = new $class($name);
 		$this->formElements[$this->elementIndex] = $obj;
 		$this->elementIndex++;
