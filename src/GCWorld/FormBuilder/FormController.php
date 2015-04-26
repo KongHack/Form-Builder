@@ -29,6 +29,36 @@ class FormController
 		return $obj;
 	}
 
+	/**
+	 * @param $name
+	 * @return \GCWorld\FormBuilder\Elements\TextInput
+	 */
+	public function addTextInput($name)
+	{
+		return $this->addElement('TextInput',$name);
+	}
+
+	/**
+	 * @param $name
+	 * @return \GCWorld\FormBuilder\Elements\Textarea
+	 */
+	public function addTextarea($name)
+	{
+		return $this->addElement('Textarea',$name);
+	}
+
+	/**
+	 * @param $name
+	 * @return \GCWorld\FormBuilder\Elements\Select
+	 */
+	public function addSelect($name)
+	{
+		return $this->addElement('Select',$name);
+	}
+
+	/**
+	 * Directly output the form!
+	 */
 	public function render()
 	{
 		echo '<form action="'.$this->formUrl.'" method="'.$this->formMethod.'">';
