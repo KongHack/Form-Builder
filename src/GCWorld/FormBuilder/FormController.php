@@ -28,4 +28,18 @@ class FormController
 		$this->elementIndex++;
 		return $obj;
 	}
+
+	public function render()
+	{
+		echo '<form action="'.$this->formUrl.'" method="'.$this->formMethod.'">';
+		foreach($this->formElements as $element)
+		{
+			/** @var \GCWorld\FormBuilder\BaseElement $element */
+			echo '<div class="form-group">';
+			echo $element->render();
+			echo '</div>';
+		}
+		echo '<div class="form-group"><input type="submit" class="btn btn-success" value="Submit"></div>';
+		echo '</form>';
+	}
 }
