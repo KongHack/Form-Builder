@@ -3,6 +3,10 @@ namespace GCWorld\FormBuilder\Elements;
 
 use GCWorld\FormBuilder\BaseElement;
 
+/**
+ * Class TextInput
+ * @package GCWorld\FormBuilder\Elements
+ */
 class TextInput extends BaseElement
 {
 	/**
