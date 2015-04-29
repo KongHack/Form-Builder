@@ -1,7 +1,25 @@
 <?php
+namespace GCWorld\FormBuilder\Elements;
+
+use GCWorld\FormBuilder\BaseElement;
+
 /**
- * Created by PhpStorm.
- * User: mitch
- * Date: 4/27/15
- * Time: 8:54 AM
+ * Note: Best used with: http://eonasdan.github.io/bootstrap-datetimepicker/
+ *
+ * Class DateTime
+ * @package GCWorld\FormBuilder\Elements
  */
+class DateTime extends BaseElement
+{
+
+
+	public function render()
+	{
+		$out = '';
+
+
+
+
+		return $out;
+	}
+}

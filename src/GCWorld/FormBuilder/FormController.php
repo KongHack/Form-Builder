@@ -7,12 +7,25 @@ class FormController
 	protected $elementIndex = 0;
 	protected $formUrl      = null;
 	protected $formMethod   = null;
+	protected $isContainer  = false;
 	public    $formEncType  = 'multipart/form-data';
 
-	public function __construct($url, $method = 'POST')
+	/**
+	 * @param null   $url
+	 * @param string $method
+	 */
+	public function __construct($url = null, $method = 'POST')
 	{
 		$this->formUrl    = $url;
 		$this->formMethod = $method;
+	}
+
+	/**
+	 * Sets this form as a container, omitting the form wrapper and submit button
+	 */
+	public function setContainer()
+	{
+		$this->isContainer = true;
 	}
 
 	/**
@@ -57,19 +70,27 @@ class FormController
 	}
 
 	/**
-	 * Directly output the form!
+	 * @return string
 	 */
 	public function render()
 	{
-		echo '<form action="'.$this->formUrl.'" method="'.$this->formMethod.'">';
+		$out = '';
+		if(!$this->isContainer)
+		{
+			$out .= '<form action="'.$this->formUrl.'" method="'.$this->formMethod.'">';
+		}
 		foreach($this->formElements as $element)
 		{
 			/** @var \GCWorld\FormBuilder\BaseElement $element */
-			echo '<div class="form-group">';
-			echo $element->render();
-			echo '</div>';
+			$out .= '<div class="form-group">';
+			$out .= $element->render();
+			$out .= '</div>';
 		}
-		echo '<div class="form-group"><input type="submit" class="btn btn-success" value="Submit"></div>';
-		echo '</form>';
+		if(!$this->isContainer)
+		{
+			$out .= '<div class="form-group"><input type="submit" class="btn btn-success" value="Submit"></div>';
+			$out .= '</form>';
+		}
+		return $out;
 	}
 }
