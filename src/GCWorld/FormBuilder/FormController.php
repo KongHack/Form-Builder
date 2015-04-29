@@ -70,6 +70,73 @@ class FormController
 	}
 
 	/**
+	 * @param $name
+	 * @return \GCWorld\FormBuilder\Elements\Checkbox
+	 */
+	public function addCheckbox($name)
+	{
+		return $this->addElement('Checkbox',$name);
+	}
+
+	/**
+	 * @param $name
+	 * @return \GCWorld\FormBuilder\Elements\CKEditor
+	 */
+	public function addCKEditor($name)
+	{
+		return $this->addElement('CKEditor',$name);
+	}
+
+	/**
+	 * @param $name
+	 * @return \GCWorld\FormBuilder\Elements\DateTime
+	 */
+	public function addDateTime($name)
+	{
+		return $this->addElement('DateTime',$name);
+	}
+
+	/**
+	 * @param $name
+	 * @return \GCWorld\FormBuilder\Elements\Password
+	 */
+	public function addPassword($name)
+	{
+		return $this->addElement('Password',$name);
+	}
+
+	/**
+	 * @param $name
+	 * @return \GCWorld\FormBuilder\Elements\Range
+	 */
+	public function addRange($name)
+	{
+		return $this->addElement('Range',$name);
+	}
+
+	/**
+	 * @param $name
+	 * @return \GCWorld\FormBuilder\Elements\Toggle
+	 */
+	public function addToggle($name)
+	{
+		return $this->addElement('Toggle',$name);
+	}
+
+
+	/**
+	 * @param $config
+	 * @return \GCWorld\FormBuilder\Elements\Row
+	 */
+	public function addRow($config)
+	{
+		$row = $this->addElement('Row','rows_do_not_have_names');
+		/** @var \GCWorld\FormBuilder\Elements\Row $row */
+		$row->setConfig($config);
+		return $row;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function render()
