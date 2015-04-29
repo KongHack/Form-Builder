@@ -137,6 +137,18 @@ class FormController
 	}
 
 	/**
+	 * @param $html
+	 * @return \GCWorld\FormBuilder\Elements\HTML
+	 */
+	public function addHTML($html)
+	{
+		$row = $this->addElement('HTML','html_does_not_have_names');
+		/** @var \GCWorld\FormBuilder\Elements\HTML $row */
+		$row->setHTML($html);
+		return $row;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function render()
