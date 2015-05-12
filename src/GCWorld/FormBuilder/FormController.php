@@ -123,7 +123,6 @@ class FormController
 		return $this->addElement('Toggle',$name);
 	}
 
-
 	/**
 	 * @param $config
 	 * @return \GCWorld\FormBuilder\Elements\Row

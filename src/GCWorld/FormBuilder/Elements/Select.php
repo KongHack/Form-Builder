@@ -43,7 +43,7 @@ class Select extends BaseElement
 		{
 			$out .= '<label>'.$this->elementLabel.'</label>'."\n";
 		}
-		echo '<select name="'.$this->elementName.'"';
+		$out .=  '<select name="'.$this->elementName.'"';
 		if($this->select2)
 		{
 			$this->elementClass .= ' select2-basic';
