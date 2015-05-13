@@ -10,7 +10,7 @@ class Row extends BaseElement
 	private $containers = array();
 
 	/**
-	 * @param $config
+	 * @param string $config
 	 * @return $this
 	 * @throws \Exception
 	 */
@@ -31,8 +31,8 @@ class Row extends BaseElement
 	}
 
 	/**
-	 * @param $index
-	 * @return \GCworld\FormBuilder\FormController
+	 * @param integer $index
+	 * @return \GCWorld\FormBuilder\FormController
 	 * @throws \Exception
 	 */
 	public function getContainer($index)
@@ -50,6 +50,10 @@ class Row extends BaseElement
 		return $this->containers[$index];
 	}
 
+	/**
+	 * @return string
+	 * @throws \Exception
+	 */
 	public function render()
 	{
 		$out = '<div class="row">';
