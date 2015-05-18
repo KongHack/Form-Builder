@@ -1,19 +1,19 @@
 {
-    "name": "GCWorld/FormBuilder",
-    "description": "GCWorld Industries Form Builder",
-    "authors": [
-        {
-            "name": "GameCharmer",
-            "email": "admin@gamecharmer.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "php": ">=5.4.0"
-    },
-    "autoload": {
-        "psr-0": {
-            "GCWorld": "src/"
-        }
+  "name": "gcworld/formbuilder",
+  "description": "GCWorld Industries Form Builder",
+  "authors": [
+    {
+      "name": "GameCharmer",
+      "email": "admin@gamecharmer.com"
     }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "GCWorld\\FormBuilder\\": "src/"
+    }
+  },
+  "license":"proprietary"
 }

@@ -1,5 +1,2 @@
-.composer/*
 .idea/*
-composer.lock
-composer.phar
 vendor/*
