@@ -11,45 +11,40 @@ use GCWorld\FormBuilder\BaseElement;
  */
 class Checkbox extends BaseElement
 {
-	protected $elementClass = 'checkbox';
-	protected $checkState   = false;
-	/**
-	 * @return string
-	 */
-	public function render()
-	{
+    protected $elementClass = 'checkbox';
+    protected $checkState   = false;
+    /**
+     * @return string
+     */
+    public function render()
+    {
 
-		$out = '<div class="'.$this->elementClass.'"><label>';
-		$out .= '<input type="checkbox" name="'.$this->elementName.'"';
-		if(!empty($this->elementID))
-		{
-			$out .= ' id="'.$this->elementID.'"';
-		}
+        $out = '<div class="'.$this->elementClass.'"><label>';
+        $out .= '<input type="checkbox" name="'.$this->elementName.'"';
+        if (!empty($this->elementID)) {
+        $out .= ' id="'.$this->elementID.'"';
+        }
 
-		if(empty($this->elementValue))
-		{
-			$out .= ' value="1"';
-		}
-		else
-		{
-			$out .= ' value="'.$this->elementValue.'"';
-		}
+        if (empty($this->elementValue)) {
+        $out .= ' value="1"';
+        } else {
+            $out .= ' value="'.$this->elementValue.'"';
+        }
 
-		if($this->checkState)
-		{
-			$out .= ' checked="checked"';
-		}
-		$out .= '></label></div>';
-		return $out;
-	}
+        if ($this->checkState) {
+            $out .= ' checked="checked"';
+        }
+        $out .= '></label></div>';
+        return $out;
+    }
 
-	/**
-	 * @param $state
-	 * @return $this
-	 */
-	public function setCheckState($state)
-	{
-		$this->checkState = $state;
-		return $this;
-	}
+    /**
+     * @param $state
+     * @return $this
+     */
+    public function setCheckState($state)
+    {
+        $this->checkState = $state;
+        return $this;
+    }
 }

@@ -11,40 +11,36 @@ use GCWorld\FormBuilder\BaseElement;
  */
 class Password extends BaseElement
 {
-	/**
-	 * @return string
-	 */
-	public function render()
-	{
-		$out = '';
-		if(!empty($this->elementLabel))
-		{
-			$out .= '<label>'.$this->elementLabel.'</label>'."\n";
-		}
-		$out .= '<input type="password" name="'.$this->elementName.'" class="'.$this->elementClass.'"';
-		if(empty($this->elementID))
-		{
-			$this->elementID = $this->elementName.'_'.time();
-		}
-		$out .= ' id="'.$this->elementID.'"';
-		if(!empty($this->elementPlaceholder))
-		{
-			$out .= ' placeholder="'.$this->elementPlaceholder.'"';
-		}
-		if(!empty($this->elementValue))
-		{
-			$out .= ' value="'.htmlentities($this->elementValue).'"';
-		}
-		$out .= '>';
+    /**
+     * @return string
+     */
+    public function render()
+    {
+        $out = '';
+        if (!empty($this->elementLabel)) {
+        $out .= '<label>'.$this->elementLabel.'</label>'."\n";
+        }
+        $out .= '<input type="password" name="'.$this->elementName.'" class="'.$this->elementClass.'"';
+        if (empty($this->elementID)) {
+        $this->elementID = $this->elementName.'_'.time();
+        }
+        $out .= ' id="'.$this->elementID.'"';
+        if (!empty($this->elementPlaceholder)) {
+            $out .= ' placeholder="'.$this->elementPlaceholder.'"';
+        }
+        if (!empty($this->elementValue)) {
+            $out .= ' value="'.htmlentities($this->elementValue).'"';
+        }
+        $out .= '>';
 
-		$out .= '
-		<script type="text/javascript">
-			$(function(){
+        $out .= '
+        <script type="text/javascript">
+            $(function(){
 				$("#'.$this->elementID.'").pwstrength();
-			});
-		</script>
+            });
+        </script>
 		';
 
-		return $out;
-	}
+        return $out;
+    }
 }
